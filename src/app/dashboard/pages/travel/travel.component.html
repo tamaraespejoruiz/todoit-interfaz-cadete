@@ -1,0 +1,19 @@
+<div class="contenedor">
+  <app-header></app-header>
+
+  <h2 class="bienvenida"> ¡Bienvenido {{obtenerNombreCadete()}}!</h2>
+
+  <div class="buscador"> 
+    <mat-form-field appearance="standard">
+      <mat-label>Viajes</mat-label>
+      <mat-select (selectionChange)="seleccionarFiltro()">
+        <mat-option value="disponibles">Viajes disponibles/pendientes</mat-option>
+        <mat-option value="aceptados">Viajes en curso/aceptados</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="contenedor-card">
+    <ng-template #cardsHolder></ng-template>
+  </div>
+</div>
