@@ -25,7 +25,6 @@ export class TravelComponent implements OnInit {
         resultado = resultado.concat(resultadoParcial.filter(viaje => viaje.travelEquipmentDTOs[viaje.travelEquipmentDTOs.length - 1].statusTravel != 10)); 
       }  
       this.mostrarViajes(resultado);
-      //console.log(resultado);
     });
   }
   
@@ -45,7 +44,6 @@ export class TravelComponent implements OnInit {
       }
       
       this.mostrarViajes(resultado);
-      console.log(resultado);
     })    
   }
   ngOnInit( ): void {  }

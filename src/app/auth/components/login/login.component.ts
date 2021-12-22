@@ -57,15 +57,12 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/auth/login']);
         return;
       }
-      console.log(resp);
       localStorage.setItem('idRolUsuario', JSON.stringify(resp.rol.id));
       localStorage.setItem('userLogeado', JSON.stringify(this.user.email));
       localStorage.setItem('nombreUsuario', JSON.stringify(resp.fullName));
       localStorage.setItem('idUsuario', JSON.stringify(resp.id)); 
       this.router.navigate(['/dashboard/travel']);
     }, error => {
-      console.log(error);
-
       Swal.fire({
         icon: 'error',
         title: 'Oops...',

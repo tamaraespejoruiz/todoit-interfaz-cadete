@@ -56,7 +56,6 @@ export class CardComponent implements OnInit {
 
   marcarComoEntregado() { //3 a 4 o 7 a 8
     this.statusTravelService.aceptarViaje(this.idViaje, this.estadoDelViaje).subscribe(resp=> {
-    console.log("Viaje marcado como entregado:", this.idViaje); 
     this.sacarTarjeta(this.idViaje);
     }, error => {
       Swal.fire({
@@ -69,7 +68,6 @@ export class CardComponent implements OnInit {
   
   retirado() { // 2 a 3 o 6 a 7
     this.statusTravelService.aceptarViaje(this.idViaje, this.estadoDelViaje).subscribe(resp=> {
-      console.log("Viaje marcado como retirado:", this.idViaje); 
       this.sacarTarjeta(this.idViaje);
       }, error => {
         Swal.fire({
@@ -92,7 +90,6 @@ export class CardComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.statusTravelService.cancelarViaje(this.idViaje, this.estadoDelViaje).subscribe( resp => { 
-          console.log('Viaje Eliminado', this.idViaje);
           this.sacarTarjeta(this.idViaje);
           Swal.fire(
             'Eliminado!',
